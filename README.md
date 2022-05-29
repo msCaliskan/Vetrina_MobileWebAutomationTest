@@ -1,0 +1,1 @@
+# Vetrina_MobileWebAutomationTest
