@@ -2,7 +2,7 @@ Feature:Mobile | Forget Password - The user tries to send forget password email
   @smoke
   Scenario:The user tries to send an email with empty inputs
 
-    Given The user visits JeansLab homepage
+    Given The user visits Vetrina homepage
     And The user verifies redirected to homepage
     And The user clicks login button
     And The user clicks "Şifremi unuttum" button

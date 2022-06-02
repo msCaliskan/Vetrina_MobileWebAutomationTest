@@ -38,8 +38,7 @@ public class AccountPage extends BasePage{
 
     @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public List<WebElement> dataList_Loc;
 
-    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public WebElement ulke_Loc2;
-
+    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public WebElement country_Loc;
 
     @FindBy(css = "#zipPostalCode") public WebElement postaKodu_Loc;
 
@@ -50,8 +49,6 @@ public class AccountPage extends BasePage{
     @FindBy(xpath = "//*[contains(@class, 'MuiAccordionSummary-expandIconWrapper')]") public WebElement arrowBtn_Loc;
 
     @FindBy(xpath = "(//*[text()='Şifremi Sıfırla'])[2]") public WebElement sifremiSifirla_Loc;
-
-    @FindBy(xpath = "//*[contains(@class, 'ins-side-menu-arrow ins')]") public WebElement popUpArrow_Loc;
 
     @FindBy(xpath = "//*[text()='Çıkış']") public WebElement cikisYap_Loc;
 
@@ -100,7 +97,15 @@ public class AccountPage extends BasePage{
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
         telefon_Loc.click();
         telefon_Loc.sendKeys(ConfigurationReader.get("user_phone1"));
+        postaKodu_Loc.click();
+        postaKodu_Loc.sendKeys("34340");
+        tcKimlik_Loc.click();
+        tcKimlik_Loc.sendKeys(ConfigurationReader.get("user_identifier"));
         BrowserUtils.waitFor(1);
+
+        ulke_Loc.click();
+        BrowserUtils.waitFor(1);
+        country_Loc.click();
 
         sehir_Loc.click();
         BrowserUtils.waitFor(1);
@@ -127,10 +132,7 @@ public class AccountPage extends BasePage{
             }
         }
 
-        postaKodu_Loc.click();
-        postaKodu_Loc.sendKeys("34340");
-        tcKimlik_Loc.click();
-        tcKimlik_Loc.sendKeys(ConfigurationReader.get("user_identifier"));
+
         BrowserUtils.waitFor(1);
         adres_Loc.sendKeys("Levent, HAN Spaces, Nispetiye Cd No:24");
     }

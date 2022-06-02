@@ -3,17 +3,17 @@ Feature: Mobile | Add to basket
  @smoke
   Scenario:Add to basket and delete product from basket
 
-  Given The user visits JeansLab homepage
+  Given The user visits Vetrina homepage
   And The user verifies redirected to homepage
   And The user clicks login button
   And The user enters valid credentials for mobile
   And The user clicks "Giriş Yap" buttonn
   And The user clicks hamburger menu button
-  And The user navigates to "KADIN" category
+  And The user navigates to "Kadın" category
   Then The user verifies redirected to "/kadin" page
   And The user clicks anyone product
   And The user chooses color and size
-  Then The user clicks "Sepete Ekle" button
+  Then The user clicks "SEPETE EKLE" button
   And The user clicks "Sepete Git" button
   And The user verifies redirected to "/basket" page
   When The user clicks "Sonraki Adım" button

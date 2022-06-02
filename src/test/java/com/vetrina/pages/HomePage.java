@@ -41,7 +41,7 @@ public class HomePage extends BasePage{
     }
 
     public static void checkHomePage(){
-        String expectedUrl ="https://www.jeanslab.com/";
+        String expectedUrl ="https://www.vetrinaturkiye.com/";
         String actualUrl = Driver.get().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
     }
@@ -63,6 +63,12 @@ public class HomePage extends BasePage{
     public void invalidPasswordMobile(){
         email_Loc.sendKeys(ConfigurationReader.get("user_email"));
         password_Loc.sendKeys("Inveon34...");
+    }
+
+    public void clickHambMenuBtn(){
+        BrowserUtils.waitForClickablility(hamburgerMenuBtn_Loc,5);
+        new HomePage().hamburgerMenuBtn_Loc.click();
+        BrowserUtils.waitFor(1);
     }
 
 

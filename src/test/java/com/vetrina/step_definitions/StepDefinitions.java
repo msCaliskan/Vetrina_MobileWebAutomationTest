@@ -12,8 +12,8 @@ import org.junit.Assert;
 
 public class StepDefinitions {
 
-    @Given("The user visits JeansLab homepage")
-    public void the_user_visits_JeansLab_homepage() {
+    @Given("The user visits Vetrina homepage")
+    public void the_user_visits_Vetrina_homepage() {
         new HomePage().gotoHomePage();
         BrowserUtils.waitFor(1);
     }
@@ -40,9 +40,7 @@ public class StepDefinitions {
 
     @Given("The user clicks hamburger menu button")
     public void the_user_clicks_hamburger_menu_button() {
-        BrowserUtils.waitFor(2);
-        new HomePage().hamburgerMenuBtn_Loc.click();
-        BrowserUtils.waitFor(1);
+        new HomePage().clickHambMenuBtn();
     }
 
     @When("The user verifies redirected to {string} page")

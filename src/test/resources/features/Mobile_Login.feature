@@ -3,7 +3,7 @@ Feature: Mobile | Login with valid and invalid credentials
 
   Background:
 
-    Given The user visits JeansLab homepage
+    Given The user visits Vetrina homepage
     And The user verifies redirected to homepage
     And The user clicks login button
 

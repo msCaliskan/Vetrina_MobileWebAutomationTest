@@ -3,7 +3,7 @@ Feature: Mobile | Add new address and delete
   @smoke
   Scenario: Add new address and delete
 
-    Given The user visits JeansLab homepage
+    Given The user visits Vetrina homepage
     And The user verifies redirected to homepage
     And The user clicks login button
     And The user enters valid credentials for mobile

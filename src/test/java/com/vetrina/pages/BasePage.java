@@ -18,7 +18,7 @@ public abstract class BasePage {
 
     public static void verifyUrl(String expectedURL) {
         String actualTitle = Driver.get().getCurrentUrl();
-        actualTitle = actualTitle.replace("https://www.jeanslab.com","");
+        actualTitle = actualTitle.replace("https://www.vetrinaturkiye.com","");
         Assert.assertEquals(expectedURL,actualTitle);
     }
 
