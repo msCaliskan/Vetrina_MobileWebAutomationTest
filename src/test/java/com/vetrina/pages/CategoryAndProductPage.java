@@ -23,8 +23,6 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1x0t2pd'])[15]") public WebElement uyari_Loc;
 
-    @FindBy(css = "span.MuiTypography-root.MuiTypography-body3.css-gg0uaj") public WebElement price_Loc;
-
     @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
 
     @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']") public WebElement fiyatDHVBtn_Loc;
@@ -82,7 +80,6 @@ public class CategoryAndProductPage extends BasePage {
 
     public void validPrice(){
         String price = priceHolder_Loc.getAttribute("value");
-        System.out.println("gerçek değer = "+price);
 
         int b = Integer.parseInt(price);
         int c= b-5;
