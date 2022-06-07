@@ -112,7 +112,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -126,7 +126,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -153,7 +153,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -167,7 +167,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }

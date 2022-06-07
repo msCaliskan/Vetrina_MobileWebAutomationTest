@@ -3,6 +3,7 @@ package com.vetrina.pages;
 import com.vetrina.utilities.BrowserUtils;
 import com.vetrina.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,8 +21,13 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
 
-    @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1x0t2pd'])[14]") public WebElement uyari_Loc;
+    @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1x0t2pd'])[15]") public WebElement uyari_Loc;
 
+    @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-body3 css-gg0uaj']") public WebElement price_Loc;
+
+    @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
+
+    @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']") public WebElement fiyatDHVBtn_Loc;
 
     public void clickProductRandom(){
 
@@ -32,7 +38,15 @@ public class CategoryAndProductPage extends BasePage {
         BrowserUtils.hover(prodList_Loc.get(a));
         BrowserUtils.waitFor(1);
         prodList_Loc.get(a).click();
+        BrowserUtils.waitFor(2);
+
+    }
+
+    public void clickFiyatButton(){
+        BrowserUtils.waitForClickablility(fiyatDHVBtn_Loc,5);
         BrowserUtils.waitFor(1);
+        BrowserUtils.clickWithJS(fiyatDHVBtn_Loc);
+        BrowserUtils.waitFor(2);
     }
 
     public void searchResult(String string){
@@ -66,4 +80,22 @@ public class CategoryAndProductPage extends BasePage {
         BrowserUtils.clickWithJS(sizeList_Loc.get(a));
     }
 
+    public void validPrice(){
+        String price = price_Loc.getText();
+        System.out.println("gerçek değer = "+price);
+        String a = price.substring(0, price.length()-6);
+
+        if(a.contains(".")){
+            a = a.replace(".","");
+        }
+        int b = Integer.parseInt(a);
+        int c= b-5;
+
+        priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
+        priceHolder_Loc.sendKeys(Keys.DELETE);
+        BrowserUtils.waitFor(1);
+        priceHolder_Loc.sendKeys(Integer.toString(c));
+        BrowserUtils.waitFor(2);
+
+    }
 }
