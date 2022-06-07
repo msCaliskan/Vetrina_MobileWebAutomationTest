@@ -23,7 +23,7 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1x0t2pd'])[15]") public WebElement uyari_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-body3 css-gg0uaj']") public WebElement price_Loc;
+    @FindBy(css = "span.MuiTypography-root.MuiTypography-body3.css-gg0uaj") public WebElement price_Loc;
 
     @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
 
@@ -81,14 +81,10 @@ public class CategoryAndProductPage extends BasePage {
     }
 
     public void validPrice(){
-        String price = price_Loc.getText();
+        String price = priceHolder_Loc.getAttribute("value");
         System.out.println("gerçek değer = "+price);
-        String a = price.substring(0, price.length()-6);
 
-        if(a.contains(".")){
-            a = a.replace(".","");
-        }
-        int b = Integer.parseInt(a);
+        int b = Integer.parseInt(price);
         int c= b-5;
 
         priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
