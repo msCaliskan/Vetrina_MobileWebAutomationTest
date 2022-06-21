@@ -24,10 +24,6 @@ public class AccountPage extends BasePage{
 
     @FindBy(css = "#confirmNewPassword") public WebElement sifreTekrari_Loc;
 
-    @FindBy(xpath = "//p[text()='Şifrenizi başarıyla değiştirdiniz']") public WebElement sifreMsg_Loc;
-
-    @FindBy(xpath = "//p[text()='Teslimat adresi bulunmamaktadır.']") public WebElement adresMsg_Loc;
-
     @FindBy(css = "#title") public WebElement adresBasligi_Loc;
 
     @FindBy(css = "#countryId") public WebElement ulke_Loc;

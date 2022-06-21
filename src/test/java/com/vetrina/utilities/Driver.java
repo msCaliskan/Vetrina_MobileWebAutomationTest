@@ -36,7 +36,7 @@ public class Driver {
 
                 Map<String, Object> deviceMetrics = new HashMap<>();
                 deviceMetrics.put("width", 375);
-                deviceMetrics.put("height", 667);
+                deviceMetrics.put("height", 812);
                 deviceMetrics.put("deviceScaleFactor", 100);
                 deviceMetrics.put("mobile", true);
 
