@@ -130,50 +130,6 @@ public class AccountPage extends BasePage{
 
 
         BrowserUtils.waitFor(1);
-        adres_Loc.sendKeys("Levent, HAN Spaces, Nispetiye Cd No:24");
-    }
-    public void enterGuestAdress(){
-        BrowserUtils.scrollDown();
-        BrowserUtils.waitFor(1);
-
-        adresBasligi_Loc.sendKeys(ConfigurationReader.get("adress_title"));
-        ad_Loc.sendKeys(ConfigurationReader.get("user_firstName"));
-        soyad_Loc.sendKeys(ConfigurationReader.get("user_lastName"));
-        email_Loc.sendKeys(ConfigurationReader.get("user_email"));
-        telefon_Loc.click();
-        telefon_Loc.sendKeys(ConfigurationReader.get("user_phone1"));
-        BrowserUtils.waitFor(1);
-
-        sehir_Loc.click();
-        BrowserUtils.waitFor(1);
-        List<WebElement> allCity = dataList_Loc;
-
-        for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("Ankara")){
-                allCity.get(i).click();
-                break;
-            }
-        }
-
-        BrowserUtils.waitFor(1);
-
-        ilce_Loc.click();
-        BrowserUtils.waitFor(1);
-
-        List<WebElement> allCounty= dataList_Loc;
-
-        for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("EVREN")){
-                allCounty.get(i).click();
-                break;
-            }
-        }
-
-        postaKodu_Loc.click();
-        postaKodu_Loc.sendKeys("34340");
-        tcKimlik_Loc.click();
-        tcKimlik_Loc.sendKeys(ConfigurationReader.get("user_identifier"));
-        BrowserUtils.waitFor(1);
-        adres_Loc.sendKeys("Levent, HAN Spaces, Nispetiye Cd No:24");
+        adres_Loc.sendKeys("test test test");
     }
 }

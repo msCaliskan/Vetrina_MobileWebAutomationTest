@@ -78,11 +78,6 @@ public class StepDefinitions {
         new AccountPage().enterAdress();
     }
 
-    @When("The user enters valid informations for guest")
-    public void theUserEntersValidInformationsForGuest() {
-        new AccountPage().enterGuestAdress();
-    }
-
     @When("The user clicks anyone product")
     public void the_user_clicks_anyone_product() {
         new CategoryAndProductPage().clickProductRandom();
