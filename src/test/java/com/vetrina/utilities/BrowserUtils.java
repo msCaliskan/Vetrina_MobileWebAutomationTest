@@ -81,7 +81,7 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.get(), timeout);
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
