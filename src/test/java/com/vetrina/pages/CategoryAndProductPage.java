@@ -21,7 +21,9 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
 
-    @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']/..//*[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1x0t2pd']") public WebElement uyari_Loc;
+    @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']/..//button") public WebElement uyariPrice_Loc;
+
+    @FindBy(xpath = "(//*[text()='Uyarı']/..//button)[2]") public WebElement uyariFavorite_Loc;
 
     @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
 
@@ -65,8 +67,14 @@ public class CategoryAndProductPage extends BasePage {
         Driver.get().findElement(By.xpath(tabLocator)).click();
     }
     public void closePopUps(){
-        BrowserUtils.waitForClickablility(uyari_Loc,5);
-        uyari_Loc.click();
+        BrowserUtils.waitForClickablility(uyariPrice_Loc,5);
+        uyariPrice_Loc.click();
+        BrowserUtils.waitFor(1);
+    }
+
+    public void closePopUpss(){
+        BrowserUtils.waitForClickablility(uyariFavorite_Loc,5);
+        uyariFavorite_Loc.click();
         BrowserUtils.waitFor(1);
     }
 

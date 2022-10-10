@@ -12,7 +12,7 @@ Feature: Mobile | Add to favorites and delete
     Then The user verifies redirected to "/erkek" page
     And The user clicks anyone product
     And The user clicks hearth button
-    Then The user closes popUps
+    Then The user closes popUpss
     And The user clicks login button
     Then The user clicks arrow button
     And The user clicks "Favori Listem" button
