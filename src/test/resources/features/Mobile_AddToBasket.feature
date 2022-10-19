@@ -9,8 +9,8 @@ Feature: Mobile | Add to basket
   And The user enters valid credentials for mobile
   And The user clicks "Giriş Yap" buttonn
   And The user clicks hamburger menu button
-  And The user navigates to "Kadın" category
-  Then The user verifies redirected to "/kadin" page
+  And The user navigates to "Erkek" "Espadril" category
+  Then The user verifies redirected to "/erkek-ayakkabi-espadril" page
   And The user clicks anyone product
   And The user chooses color and size
   Then The user clicks "SEPETE EKLE" button

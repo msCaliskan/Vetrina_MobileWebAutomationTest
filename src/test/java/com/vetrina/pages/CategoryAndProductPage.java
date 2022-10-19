@@ -60,11 +60,16 @@ public class CategoryAndProductPage extends BasePage {
         }
     }
 
-    public static void navigateMobile(String tab){
-        String tabLocator = "//span[text()='"+tab+"']";
+    public static void navigateMobile(String tab, String module){
+        String tabLocator = "//span[text()='"+tab+"']/../../button";
+
+        String moduleLocator = "//a[text()='"+module+"']";
 
         BrowserUtils.waitForClickablility(Driver.get().findElement(By.xpath(tabLocator)), 5);
         Driver.get().findElement(By.xpath(tabLocator)).click();
+        BrowserUtils.waitFor(1);
+        Driver.get().findElement(By.xpath(moduleLocator)).click();
+        BrowserUtils.waitFor(1);
     }
     public void closePopUps(){
         BrowserUtils.waitForClickablility(uyariPrice_Loc,5);

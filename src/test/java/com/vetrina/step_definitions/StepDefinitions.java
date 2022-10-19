@@ -156,9 +156,9 @@ public class StepDefinitions {
         BrowserUtils.clickWithJS(accountPage.cikisYap_Loc);
     }
 
-    @And("The user navigates to {string} category")
-    public void theUserNavigatesToCategory(String category) {
-        CategoryAndProductPage.navigateMobile(category);
+    @And("The user navigates to {string} {string} category")
+    public void theUserNavigatesToCategory(String tab, String module) {
+        CategoryAndProductPage.navigateMobile(tab, module);
     }
 
     @Then("The user scroll down to page")
