@@ -13,9 +13,12 @@ import org.junit.Assert;
 public class StepDefinitions {
 
     AccountPage accountPage = new AccountPage();
+    AddressPage addressPage = new AddressPage();
     CategoryAndProductPage categoryAndProductPage = new CategoryAndProductPage();
+    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
     CheckoutPage checkoutPage = new CheckoutPage();
     HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
     
     @Given("The user visits Vetrina homepage")
     public void the_user_visits_Vetrina_homepage() {
@@ -35,12 +38,12 @@ public class StepDefinitions {
 
     @And("The user enters invalid email for mobile")
     public void theUserEntersInvalidEmailForMobile() {
-        homePage.invalidEmailMobile();
+        loginPage.invalidEmailMobile();
     }
 
     @And("The user enters invalid password for mobile")
     public void theUserEntersInvalidPasswordForMobile() {
-        homePage.invalidPasswordMobile();
+        loginPage.invalidPasswordMobile();
     }
 
     @Given("The user clicks hamburger menu button")
@@ -75,16 +78,16 @@ public class StepDefinitions {
 
     @When("The user enters old, new and confirm new password")
     public void the_user_enters_old_new_and_confirm_new_password() {
-        accountPage.changePassword();
+        changePasswordPage.changePassword();
     }
 
     @When("The user enters valid informations")
     public void the_user_enters_valid_informations() {
-        accountPage.enterAdress();
+        addressPage.enterAdress();
     }
 
-    @When("The user clicks anyone product")
-    public void the_user_clicks_anyone_product() {
+    @When("The user clicks any product")
+    public void the_user_clicks_any_product() {
         categoryAndProductPage.clickProductRandom();
     }
 
@@ -102,11 +105,6 @@ public class StepDefinitions {
     @When("The user enters invalid informations")
     public void the_user_enters_invalid_informations() {
         checkoutPage.invalidCard();
-    }
-
-    @When("The user selects 3D Secure, Ön Bilgilendirme and Mesafeli Satış Sözleşmesi buttons")
-    public void the_user_selects_3D_Secure_Ön_Bilgilendirme_and_Mesafeli_Satış_Sözleşmesi_buttons() {
-        checkoutPage.checkBox();
     }
 
     @Then("The user clicks Back button")
@@ -131,7 +129,7 @@ public class StepDefinitions {
 
     @And("The user enters valid credentials for mobile")
     public void theUserEntersValidCredentialsForMobile() {
-        homePage.mobilLogin();
+        loginPage.mobilLogin();
         BrowserUtils.waitFor(1);
     }
 
@@ -171,8 +169,8 @@ public class StepDefinitions {
         categoryAndProductPage.closePopUps();
     }
 
-    @And("The user chooses color and size")
-    public void theUserChoosesColorAndSize() {
+    @And("The user chooses size")
+    public void theUserChoosesSize() {
         categoryAndProductPage.selectSize();
     }
 
@@ -183,12 +181,12 @@ public class StepDefinitions {
 
     @And("The user enters wrong old password")
     public void theUserEntersWrongOldPassword() {
-        accountPage.wrongOldPassword();
+        changePasswordPage.wrongOldPassword();
     }
 
     @And("The user enters different passwords")
     public void theUserEntersDifferentPasswords() {
-        accountPage.differentPassword();
+        changePasswordPage.differentPassword();
     }
 
     @And("The user enters valid price")
@@ -204,5 +202,10 @@ public class StepDefinitions {
     @Then("The user closes popUpss")
     public void theUserClosesPopUpss() {
         categoryAndProductPage.closePopUpss();
+    }
+
+    @And("The user clicks {string} button with JS")
+    public void theUserClicksButtonWithJS(String button) {
+        BasePage.clickWithJS(button);
     }
 }

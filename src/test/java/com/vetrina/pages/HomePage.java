@@ -17,8 +17,6 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#email") public WebElement email_Loc;
 
-    @FindBy(css = "#password") public WebElement password_Loc;
-
     @FindBy(xpath = "(//*[@class='MuiBox-root css-k008qs'])[1]") public WebElement hamburgerMenuBtn_Loc;
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
@@ -30,14 +28,6 @@ public class HomePage extends BasePage{
         BrowserUtils.waitForClickablility(cookies_Loc,5);
         cookies_Loc.click();
         BrowserUtils.waitFor(2);
-    }
-
-    public void mobilLogin(){
-        String email = ConfigurationReader.get("user_email");
-        String password = ConfigurationReader.get("user_password");
-
-        email_Loc.sendKeys(email);
-        password_Loc.sendKeys(password);
     }
 
     public static void checkHomePage(){
@@ -54,15 +44,6 @@ public class HomePage extends BasePage{
     public void searchBox(String string){
         searchBox_Loc.sendKeys(string+Keys.ENTER);
         BrowserUtils.waitFor(1);
-    }
-
-    public void invalidEmailMobile(){
-        email_Loc.sendKeys(ConfigurationReader.get("guest_email"));
-        password_Loc.sendKeys(ConfigurationReader.get("user_password"));
-    }
-    public void invalidPasswordMobile(){
-        email_Loc.sendKeys(ConfigurationReader.get("user_email"));
-        password_Loc.sendKeys("Inveon34...");
     }
 
     public void clickHambMenuBtn(){

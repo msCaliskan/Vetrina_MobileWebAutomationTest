@@ -41,4 +41,11 @@ public abstract class BasePage {
         Driver.get().findElement(By.xpath(button_Loc)).click();
         BrowserUtils.waitFor(1);
     }
+
+    public static void clickWithJS(String button){
+        String button_Loc = "//*[text()='"+button+"']";
+        BrowserUtils.waitForClickablility(Driver.get().findElement(By.xpath(button_Loc)),5);
+        BrowserUtils.clickWithJS(Driver.get().findElement(By.xpath(button_Loc)));
+        BrowserUtils.waitFor(2);
+    }
 }
