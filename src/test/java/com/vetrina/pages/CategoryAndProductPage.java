@@ -29,6 +29,8 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']") public WebElement fiyatDHVBtn_Loc;
 
+    @FindBy(xpath = "//*[contains(@class, 'MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label')]") public List<WebElement> filterList_Loc;
+
     public void clickProductRandom(){
 
         Random rn = new Random();
@@ -102,6 +104,19 @@ public class CategoryAndProductPage extends BasePage {
         BrowserUtils.waitFor(1);
         priceHolder_Loc.sendKeys(Integer.toString(c));
         BrowserUtils.waitFor(2);
+    }
 
+    public void clickFilterOption(String button){
+
+        for (int i = 0; i < filterList_Loc.size(); i++) {
+
+            if (filterList_Loc.get(i).getText().contains(button)){
+                BrowserUtils.hover(filterList_Loc.get(i));
+                BrowserUtils.waitFor(1);
+                BrowserUtils.clickWithJS(filterList_Loc.get(i));
+                BrowserUtils.waitFor(2);
+                break;
+            }
+        }
     }
 }

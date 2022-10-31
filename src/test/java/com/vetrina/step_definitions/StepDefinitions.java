@@ -19,6 +19,7 @@ public class StepDefinitions {
     CheckoutPage checkoutPage = new CheckoutPage();
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
+    OrderTrackingPage orderTrackingPage = new OrderTrackingPage();
     
     @Given("The user visits Vetrina homepage")
     public void the_user_visits_Vetrina_homepage() {
@@ -207,5 +208,15 @@ public class StepDefinitions {
     @And("The user clicks {string} button with JS")
     public void theUserClicksButtonWithJS(String button) {
         BasePage.clickWithJS(button);
+    }
+
+    @And("The user enters informations")
+    public void theUserEntersInformations() {
+        orderTrackingPage.enterInformations();
+    }
+
+    @And("The user clicks {string} filter button")
+    public void theUserClicksFilterButton(String button) {
+        categoryAndProductPage.clickFilterOption(button);
     }
 }

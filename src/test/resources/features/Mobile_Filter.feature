@@ -9,11 +9,11 @@ Feature: Mobile | Filter feature
     And The user navigates to "Kadın" "Bot" category
     When The user verifies redirected to "/kadin-ayakkabi-bot" page
     And The user clicks "Filtrele" button
-    And The user clicks "CASADEI" button
+    And The user clicks "CASADEI" filter button
     Then The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=Marka&Marka=904" page
-    And The user clicks "38" button
+    And The user clicks "38" filter button
     And The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=size&Marka=904&size=8428" page
-    And The user clicks "SİYAH" button
+    And The user clicks "SİYAH" filter button
     Then The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=color&Marka=904&color=8729&size=8428" page
     And The user clicks "38" button
     And The user clicks "SİYAH" button
