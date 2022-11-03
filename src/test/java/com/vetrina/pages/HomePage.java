@@ -21,8 +21,6 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiSvgIcon-root jss125']") public WebElement findBtn_Loc;
-
     public void gotoHomePage(){
         Driver.get().get(ConfigurationReader.get("url"));
         BrowserUtils.waitForClickablility(cookies_Loc,5);
@@ -31,10 +29,11 @@ public class HomePage extends BasePage{
     }
 
     public static void checkHomePage(){
-        String expectedUrl ="https://www.vetrinaturkiye.com/";
-        String actualUrl = Driver.get().getCurrentUrl();
-        Assert.assertEquals(expectedUrl,actualUrl);
+        String expectedTitle ="Vetrina";
+        String actualTitle = Driver.get().getTitle();
+        Assert.assertEquals(expectedTitle,actualTitle);
     }
+
     public void clickLogin(){
         BrowserUtils.waitForClickablility(loginBtn_Loc,5);
         loginBtn_Loc.click();

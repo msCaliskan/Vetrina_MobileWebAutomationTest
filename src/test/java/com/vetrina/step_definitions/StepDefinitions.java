@@ -24,7 +24,6 @@ public class StepDefinitions {
     @Given("The user visits Vetrina homepage")
     public void the_user_visits_Vetrina_homepage() {
         homePage.gotoHomePage();
-        BrowserUtils.waitFor(1);
     }
 
     @And("The user verifies redirected to homepage")
@@ -94,8 +93,7 @@ public class StepDefinitions {
 
     @When("The user clicks hearth button")
     public void the_user_clicks_hearth_button() {
-        categoryAndProductPage.hearthBtn_Loc.click();
-        BrowserUtils.waitFor(4);
+        categoryAndProductPage.hearthBtn();
     }
 
     @When("The user verifies {string} message")
@@ -131,7 +129,6 @@ public class StepDefinitions {
     @And("The user enters valid credentials for mobile")
     public void theUserEntersValidCredentialsForMobile() {
         loginPage.mobilLogin();
-        BrowserUtils.waitFor(1);
     }
 
     @When("The user selects On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons")
@@ -139,30 +136,14 @@ public class StepDefinitions {
         checkoutPage.checkBox();
     }
 
-
-    @And("The user clicks find button")
-    public void theUserClicksFindButton() {
-        homePage.findBtn_Loc.click();
-    }
-
     @Then("The user clicks Şifremi Sıfırla button")
     public void theUserClicksŞifremiSıfırlaButton() {
         accountPage.sifremiSifirla_Loc.click();
     }
 
-    @And("The user clicks Çıkış button")
-    public void theUserClicksÇıkışButton() {
-        BrowserUtils.clickWithJS(accountPage.cikisYap_Loc);
-    }
-
     @And("The user navigates to {string} {string} category")
     public void theUserNavigatesToCategory(String tab, String module) {
         CategoryAndProductPage.navigateMobile(tab, module);
-    }
-
-    @Then("The user scroll down to page")
-    public void theUserScrollDownToPage() {
-        BrowserUtils.scrollDown();
     }
 
     @And("The user closes popUps")
@@ -203,11 +184,6 @@ public class StepDefinitions {
     @Then("The user closes popUpss")
     public void theUserClosesPopUpss() {
         categoryAndProductPage.closePopUpss();
-    }
-
-    @And("The user clicks {string} button with JS")
-    public void theUserClicksButtonWithJS(String button) {
-        BasePage.clickWithJS(button);
     }
 
     @And("The user enters informations")

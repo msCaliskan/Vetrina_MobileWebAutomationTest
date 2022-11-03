@@ -18,8 +18,6 @@ public class AccountPage extends BasePage{
 
     @FindBy(xpath = "(//*[text()='Şifremi Sıfırla'])[2]") public WebElement sifremiSifirla_Loc;
 
-    @FindBy(xpath = "//*[text()='Çıkış']") public WebElement cikisYap_Loc;
-
     public void getInformation(String name, String lastname, String email, String phone){
         String actName = ad_Loc.getAttribute("value");
         String actlastName = soyad_Loc.getAttribute("value");

@@ -93,6 +93,12 @@ public class CategoryAndProductPage extends BasePage {
         BrowserUtils.clickWithJS(sizeList_Loc.get(a));
     }
 
+    public void hearthBtn(){
+        BrowserUtils.waitForClickablility(hearthBtn_Loc,5);
+        hearthBtn_Loc.click();
+        BrowserUtils.waitFor(1);
+    }
+
     public void validPrice(){
         String price = priceHolder_Loc.getAttribute("value");
 
