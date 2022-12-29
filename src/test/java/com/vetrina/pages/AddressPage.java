@@ -25,9 +25,9 @@ public class AddressPage extends BasePage{
 
     @FindBy(css = "#countyId") public WebElement ilce_Loc;
 
-    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public List<WebElement> dataList_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters')]") public List<WebElement> dataList_Loc;
 
-    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public WebElement country_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters')]") public WebElement country_Loc;
 
     @FindBy(css = "#zipPostalCode") public WebElement postaKodu_Loc;
 

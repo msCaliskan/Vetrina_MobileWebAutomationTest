@@ -15,7 +15,7 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[contains(@class,'MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 MuiGrid-grid-md-3')]") public List<WebElement> prodList_Loc;
 
-    @FindBy(xpath = "//button[contains(@class, 'MuiButtonBase-root has-stock')]") public List<WebElement> sizeList_Loc;
+    @FindBy(xpath = "//button[contains(@class, 'has-stock')]") public List<WebElement> sizeList_Loc;
 
     @FindBy(xpath = "//button[contains(@aria-label,'add-to-favorites')]") public WebElement hearthBtn_Loc;
 
