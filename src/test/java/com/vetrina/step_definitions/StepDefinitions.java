@@ -195,4 +195,59 @@ public class StepDefinitions {
     public void theUserClicksFilterButton(String button) {
         categoryAndProductPage.clickFilterOption(button);
     }
+
+    @And("The user clicks Instagram button")
+    public void theUserClicksInstagramButton() {
+        homePage.clickInstagramButton();
+    }
+
+    @And("The user verifies redirected to Instagram page")
+    public void theUserVerifiesRedirectedToInstagramPage() {
+        homePage.verifyInstagramPage();
+    }
+
+    @And("The user clicks Facebook button")
+    public void theUserClicksFacebookButton() {
+        homePage.clickFacebookButton();
+    }
+
+    @And("The user verifies redirected to Facebook page")
+    public void theUserVerifiesRedirectedToFacebookPage() {
+        homePage.verifyFacebookPage();
+    }
+
+    @And("The user clicks Twitter button")
+    public void theUserClicksTwitterButton() {
+        homePage.clickTwitterButton();
+    }
+
+    @And("The user verifies redirected to Twitter page")
+    public void theUserVerifiesRedirectedToTwitterPage() {
+        homePage.verifyTwitterPage();
+    }
+
+    @And("The user clicks submit button")
+    public void theUserClicksSubmitButton() {
+        homePage.clickNewsLetterButton();
+    }
+
+    @And("The user clicks Confirm Privacy Policy button")
+    public void theUserClicksConfirmPrivacyPolicyButton() {
+        homePage.clickConfirmButton();
+    }
+
+    @And("The user enters invalid emails")
+    public void theUserEntersInvalidEmails() {
+        homePage.sendInvalidEmail();
+    }
+
+    @And("The user enters valid emails")
+    public void theUserEntersValidEmails() {
+        homePage.sendValidEmail();
+    }
+
+    @And("The user clicks {string} and verifies {string}")
+    public void theUserClicksAndVerifies(String button, String title) {
+        homePage.checkPageTitle(button,title);
+    }
 }
