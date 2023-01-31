@@ -13,8 +13,8 @@ Feature: Mobile | Filter feature
     Then The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=Marka&Marka=904" page
     And The user clicks "38" filter button
     And The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=size&Marka=904&size=8428" page
-    And The user clicks "SİYAH" filter button
-    Then The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=color&Marka=904&color=8729&size=8428" page
+    And The user clicks "KAHVERENGİ" filter button
+    Then The user verifies redirected to "/kadin-ayakkabi-bot?defaultMinPrice=0&pageIndex=0&defaultMaxPrice=0&lastSelectedFilter=color&Marka=904&color=8742&size=8428" page
     And The user clicks "38" button
-    And The user clicks "SİYAH" button
+    And The user clicks "KAHVERENGİ" button
     Then The user verifies redirected to "/kadin-ayakkabi-bot?Marka=904&color=&defaultMaxPrice=0&defaultMinPrice=0&lastSelectedFilter=color&size=" page
