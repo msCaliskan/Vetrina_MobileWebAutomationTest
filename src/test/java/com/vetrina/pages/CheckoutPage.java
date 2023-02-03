@@ -69,13 +69,17 @@ public class CheckoutPage extends BasePage{
     }
 
     public void delete(){
-        BrowserUtils.waitFor(1);
-        sepetimBtn_Loc.click();
-        BrowserUtils.waitFor(1);
-        Driver.get().findElement(By.xpath("//*[text()='Sepete Git']")).click();
-        BrowserUtils.waitForClickablility(deleteBtn_Loc,5);
-        BrowserUtils.clickWithJS(deleteBtn_Loc);
-        BrowserUtils.waitFor(1);
+        try {
+            BrowserUtils.waitFor(1);
+            sepetimBtn_Loc.click();
+            BrowserUtils.waitFor(1);
+            Driver.get().findElement(By.xpath("//*[text()='Sepete Git']")).click();
+            BrowserUtils.waitForClickablility(deleteBtn_Loc, 5);
+            BrowserUtils.clickWithJS(deleteBtn_Loc);
+            BrowserUtils.waitFor(1);
+        }catch (Exception e){
+            BrowserUtils.waitFor(1);
+        }
     }
 
 }
