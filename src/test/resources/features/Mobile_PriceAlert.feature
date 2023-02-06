@@ -8,8 +8,8 @@ Feature: Mobile | Price Alert
     And The user enters valid credentials for mobile
     And The user clicks "Giriş Yap" buttonn
     And The user clicks hamburger menu button
-    And The user navigates to "Erkek" "Espadril" category
-    Then The user verifies redirected to "/erkek-ayakkabi-espadril" page
+    And The user navigates to "Kadın" "Loafer" category
+    Then The user verifies redirected to "/kadin-ayakkabi-loafer" page
     And The user clicks any product
     Then The user clicks fiyat button
     And The user enters valid price
