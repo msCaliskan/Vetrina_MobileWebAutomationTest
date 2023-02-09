@@ -80,7 +80,7 @@ public class CategoryAndProductPage extends BasePage {
     }
 
     public void closePopUpss(){
-        BrowserUtils.waitForClickablility(uyariFavorite_Loc,5);
+        BrowserUtils.waitFor(3);
         uyariFavorite_Loc.click();
         BrowserUtils.waitFor(1);
     }
