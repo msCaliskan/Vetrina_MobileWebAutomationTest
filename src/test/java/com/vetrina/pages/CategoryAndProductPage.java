@@ -23,7 +23,7 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']/..//button") public WebElement uyariPrice_Loc;
 
-    @FindBy(xpath = "(//*[text()='Uyarı']/..//button)[2]") public WebElement uyariFavorite_Loc;
+    @FindBy(xpath = "//*[text()='Uyarı']/..//button") public WebElement uyariFavorite_Loc;
 
     @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
 
